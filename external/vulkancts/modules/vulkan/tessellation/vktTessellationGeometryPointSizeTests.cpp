@@ -303,7 +303,8 @@ tcu::TestStatus test (Context& context, const Flags flags)
 		const InstanceInterface& vki        = context.getInstanceInterface();
 		const VkPhysicalDevice   physDevice = context.getPhysicalDevice();
 
-		requireFeatures           (vki, physDevice, FEATURE_TESSELLATION_SHADER | FEATURE_GEOMETRY_SHADER | FEATURE_SHADER_TESSELLATION_AND_GEOMETRY_POINT_SIZE);
+		requireFeatures           (vki, physDevice, // FEATURE_TESSELLATION_SHADER | FEATURE_GEOMETRY_SHADER |
+                                           FEATURE_SHADER_TESSELLATION_AND_GEOMETRY_POINT_SIZE);
 		checkPointSizeRequirements(vki, physDevice, expectedPointSize);
 	}
 	{
