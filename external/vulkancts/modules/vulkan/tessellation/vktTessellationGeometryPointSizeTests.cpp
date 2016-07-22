@@ -197,7 +197,8 @@ void initPrograms (vk::SourceCollections& programCollection, const Flags flags)
 			<< "\n"
 			<< "void main (void)\n"
 			<< "{\n"
-			<< "    fragColor = vec4(1.0);\n"
+			<< "    mediump float v = min(gl_PointCoord.s, gl_PointCoord.t);\n"
+			<< "    fragColor = vec4(v, v, 0.0, 1.0);\n"
 			<< "}\n";
 
 		programCollection.glslSources.add("frag") << glu::FragmentSource(src.str());
